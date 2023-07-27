@@ -1,0 +1,42 @@
+name: Release themes as archives
+
+on:
+  push:
+    # Runs on semver-tagged releases
+    tags:
+      - "v*.*.*"
+
+jobs:
+  zip_themes:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # List of theme directories that shall be included
+        directory: [siteTheme-Bahn-ng]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Zip the theme directory
+        run: |
+          cd ${{ matrix.directory }} && zip -r ../${{ matrix.directory }}-${{ github.ref_name }}.zip .
+      - name: Upload zip as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ matrix.directory }}
+          path: ${{ matrix.directory }}-${{ github.ref_name }}.zip
+          retention-days: 1
+
+  make_release:
+    runs-on: ubuntu-latest
+    needs: zip_themes
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+        with:
+          path: artifacts
+      - name: Create GitHub draft release with the zipped themes as assets
+        uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844  # v0.1.15
+        with:
+          # Note: uses default github workflow token which needs write access configured
+          files: artifacts/*/*
+          draft: true
