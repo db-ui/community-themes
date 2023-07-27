@@ -1,6 +1,6 @@
 = Next generation MicrositeMaster Theme
 
-This repository contains a theme for DB microsites. It's used for internal sites, but for example also for the [DB Systel Tech Stories](https://github.com/dbsystel/tech-stories).
+This repository contains a theme for DB microsites. It's used for internal sites, but for example also for the https://github.com/dbsystel/tech-stories[DB Systel Tech Stories].
 
 == Local development
 
