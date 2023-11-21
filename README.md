@@ -2,6 +2,13 @@
 
 Within this Repository the DB Web Community will store and provide common community based (style) themes for further systems and frameworks.
 
+Potential candidates:
+- [x] [Microsite Master](./siteTheme-Bahn-ng/)
+- Material Design
+- [Salesforce / Lightning Design System](https://www.lightningdesignsystem.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Microsoft Fluent Design System](https://fluent2.microsoft.design/)
+
 ## Things to keep in mind
 
 ### Developed for and driven by the community
