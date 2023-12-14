@@ -12,11 +12,16 @@
                 <div class="td-sidebar__inner" id="td-sidebar-menu">
                     <h3>Tags</h3>
                     <%
-                        alltags?.sort().each { thisTag ->
-                            thisTag = thisTag.trim()
-                            def postsCount = posts.findAll { post ->
-                                post.status == "published" && post.tags?.contains(thisTag)
-                            }.size()
+                        def taggedPosts = [:]
+                        alltags?.
+                        unique({ a, b -> a.toLowerCase() <=> b.toLowerCase() }).
+                        sort({ a, b -> a.toLowerCase() <=> b.toLowerCase() }).
+                        each { thisTag ->
+                            thisTag = thisTag.trim().toLowerCase()
+                            taggedPosts[thisTag] = posts.findAll { post ->
+                                post.status == "published" && post.tags?.join(" ").toLowerCase().contains(thisTag.toLowerCase())
+                            }
+                            def postsCount = taggedPosts[thisTag].size()
                     %>
                     <span class="blogtag"><a class="tag" href="${content.rootpath}tags/${thisTag.replace(' ', '-')}.html">${thisTag}&nbsp;<span class="badge">${postsCount}</span></a></span><br />
                     <%
@@ -38,7 +43,7 @@
 
                         <div class="cards">
 
-                            <%tag_posts.eachWithIndex {post, i ->%>
+                            <%taggedPosts[tag.toLowerCase()].eachWithIndex {post, i ->%>
                             <% if (i!=0 && i%1==0) { %>
                         </div>
                     </div>

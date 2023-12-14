@@ -4,6 +4,11 @@
 <body onload="prettyPrint()" class="td-section bahn ng">
 <header>
 	<%include "menu.gsp"%>
+	<style>
+	figcaption div.sect1 {
+	    padding-bottom: 0px;
+	}
+	</style>
 </header>
 <div class="container-fluid">
 	<div class="td-main">
@@ -14,19 +19,26 @@
 				</div>
 			</div>
 			<div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
-				<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+				<div class="td-page-meta ml-2 pb-1 pt-2 mb-0" role="toolbar">
 					<%include "rightcolumn_wotoc.gsp" %>
 				</div>
 			</div>
 			<main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
 				<%include "main.gsp"%>
-				<% content.myPosts = published_posts.findAll{it.author=='Bertram Fey'} %>
+            <% content.myPosts = published_posts.findAll{it.author.contains(content.author)} %>
+			<%
+                def allTags = []
+                content.myPosts.each { post ->
+                    allTags += post.tags
+                }
+                def tags = []
+                allTags.unique().forEach { tag ->
+                    tags += "<a class='tag' href='${content.rootpath}tags/${tag}.html'>$tag</a>"
+                }
+                out << tags.join(' ')
+			%>
 				<%include "posts.gsp"%>
-				<% if (config.site_issueUrl && config.site_feedbackForm != 'false') {%>
-				<%include "feedback.gsp" %>
-				<% } %>
 
-			<pre>${alltags}</pre>
 			</main>
 		</div>
 	</div>

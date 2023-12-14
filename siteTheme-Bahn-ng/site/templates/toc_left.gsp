@@ -14,14 +14,12 @@
             </button>
         </form>
 
-        <nav class="collapse td-sidebar-nav" id="td-section-nav" >
-
+        <nav aria-label="Table of contents" class="collapse td-sidebar-nav" id="td-section-nav" >
             <ul class="td-sidebar-nav__section">
-                <ul>
-                    <li class="collapse show" id="docs">
-                        <ul class="td-sidebar-nav__section">
-                            <%include "toc.gsp"%>
-                        </ul>
-                    </li>
-                </ul>
+                <li class="collapse show" id="docs">
+                    <ul class="td-sidebar-nav__section">
+                        <%include "toc.gsp"%>
+                    </ul>
+                </li>
+            </ul>
         </nav>
