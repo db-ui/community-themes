@@ -13,27 +13,27 @@
 
                     <ul class="list-inline mb-0">
                         <% if (config.site_footerMail) { %>
-                        <li aria-label="User mailing list" class="list-inline-item mx-2 h3" data-original-title="User mailing list" data-placement="top"
+                        <li class="list-inline-item mx-2 h3" data-original-title="Send a mail" data-placement="top"
                             data-toggle="tooltip" title="">
-                            <a class="text-white" href="mailto:${config.site_footerMail}" rel="noopener noreferrer"
+                            <a aria-label="Send a mail" title="Send a mail" class="text-white" href="mailto:${config.site_footerMail}" rel="noopener noreferrer"
                                target="_blank" style="text-decoration: none;">
                                 <i class="fa fa-envelope"></i>
                             </a>
                         </li>
                         <% } %>
                         <% if (config.site_footerTwitter) { %>
-                        <li aria-label="Twitter" class="list-inline-item mx-2 h3" data-original-title="Twitter" data-placement="top"
+                        <li class="list-inline-item mx-2 h3" data-original-title="Contact on Twitter" data-placement="top"
                             data-toggle="tooltip" title="">
-                            <a class="text-white" href="${config.site_footerTwitter}" rel="noopener noreferrer"
+                            <a aria-label="Contact on Twitter" title="Contact on Twitter" class="text-white" href="${config.site_footerTwitter}" rel="noopener noreferrer"
                                target="_blank" style="text-decoration: none;">
                                 <i class="fab fa-twitter"></i>
                             </a>
                         </li>
                         <% } %>
                         <% if (config.site_footerSO) { %>
-                        <li aria-label="Stack Overflow" class="list-inline-item mx-2 h3" data-original-title="Stack Overflow" data-placement="top"
+                        <li class="list-inline-item mx-2 h3" data-original-title="Check at Stack Overflow" data-placement="top"
                             data-toggle="tooltip" title="">
-                            <a class="text-white" href="${config.site_footerSO}" rel="noopener noreferrer"
+                            <a aria-label="Check at Stack Overflow" title="Check at Stack Overflow" class="text-white" href="${config.site_footerSO}" rel="noopener noreferrer"
                                target="_blank" style="text-decoration: none;">
                                 <i class="fab fa-stack-overflow"></i>
                             </a>
@@ -49,9 +49,9 @@
                     <ul class="list-inline mb-0">
 
                         <% if (config.site_footerGithub) { %>
-                        <li aria-label="GitHub" class="list-inline-item mx-2 h3" data-original-title="GitHub" data-placement="top"
+                        <li class="list-inline-item mx-2 h3" data-original-title="Checkout on GitHub" data-placement="top"
                             data-toggle="tooltip" title="">
-                            <a class="text-white" href="${config.site_footerGithub}" rel="noopener noreferrer"
+                            <a aria-label="Checkout on GitHub" title="Checkout on GitHub" class="text-white" href="${config.site_footerGithub}" rel="noopener noreferrer"
                                target="_blank" style="text-decoration: none;">
                                 <i class="fab fa-github"></i>
                             </a>
@@ -59,9 +59,9 @@
                         <% } %>
 
                         <% if (config.site_footerSlack) { %>
-                        <li aria-label="Slack" class="list-inline-item mx-2 h3" data-original-title="Slack" data-placement="top"
+                        <li class="list-inline-item mx-2 h3" data-original-title="Contact via Slack" data-placement="top"
                             data-toggle="tooltip" title="">
-                            <a class="text-white" href="${config.site_footerSlack}" rel="noopener noreferrer"
+                            <a aria-label="Contact via Slack" title="Contact via Slack" class="text-white" href="${config.site_footerSlack}" rel="noopener noreferrer"
                                target="_blank" style="text-decoration: none;">
                                 <i class="fab fa-slack"></i>
                             </a>
@@ -96,5 +96,8 @@
     <script src="${content.rootpath}js/blocks.js" ></script>
     <script src="${content.rootpath}js/prettify.js"></script>
     <script src="${content.rootpath}js/adoc-scrollspy.js"></script>
+    <script src="${content.rootpath}js/lightbox.js"></script>
+    <script src="${content.rootpath}js/copy-n-paste.js"></script>
+    <script src="${content.rootpath}js/openseadragon.js"></script>
 
     

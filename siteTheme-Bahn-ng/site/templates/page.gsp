@@ -13,7 +13,7 @@
 				</div>
 			</div>
 			<div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
-				<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+				<div class="td-page-meta ml-2 pb-1 pt-2 mb-0" role="navigation" aria-label="page content navigation">
 					<%include "rightcolumn.gsp" %>
 				</div>
 			</div>

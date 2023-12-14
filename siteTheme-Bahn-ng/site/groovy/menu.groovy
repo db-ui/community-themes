@@ -13,7 +13,8 @@ try {
                 order: page['jbake-order'] as Integer,
                 filename: page['filename'],
                 uri: page['uri'],
-                children: []
+                children: [],
+                date: page['date']
             ]
         }
     }

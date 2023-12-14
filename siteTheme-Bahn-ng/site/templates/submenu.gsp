@@ -4,6 +4,21 @@
     }
     def menu = content.menu[content['jbake-menu']]
 
+    def printTitle(entry) {
+        def title
+
+        if (entry instanceof String) {
+            title  = entry
+            }
+        else {
+            title = entry.title
+        }
+        if (config.site_menu[title]) {
+            title = config.site_menu[title]
+            }
+        return title
+    }
+
     def printMenu(def c, int index, def entries) {
         String result = ''
         if(entries) {
@@ -18,13 +33,9 @@
                 if (entry.uri) {
                     result = result + """
                                 <a class="align-left pl-0 pr-2 pt-2 td-sidebar-link td-sidebar-link__section $isActive"
-                                   href="${c.rootpath}${entry.uri}">${entry.title?:entry}</a>"""
+                                   href="${c.rootpath}${entry.uri}">${printTitle(entry)}</a>"""
                 } else {
-                    def title = entry.title?:entry
-                    if (config.site_menu[title]) {
-                        title = config.site_menu[title]
-                    }
-                    result = result + """<span class="label">${title}</span>"""
+                    result = result + """<span class="label">${printTitle(entry)}</span>"""
                 }
                 if (entry.children) {
                     result = result + printMenu(c, index + 1, entry.children)
@@ -50,15 +61,17 @@
             </button>
         </form>
 
-        <nav class="collapse td-sidebar-nav" id="td-section-nav" >
+        <nav aria-label="Submenu" class="collapse td-sidebar-nav" id="td-section-nav" >
 
             <ul class="td-sidebar-nav__section">
                 <li class="td-sidebar-nav__section-title">
-                    <span class="align-left pl-0 pr-2 pt-2 active td-sidebar-link td-sidebar-link__section">${content['jbake-menu']}</span>
+                    <span class="align-left pl-0 pr-2 pt-2 active td-sidebar-link td-sidebar-link__section"><%= printTitle(content['jbake-menu']) %></span>
                 </li>
-                <ul>
-                    <li class="collapse show" id="docs">
-                        <%= printMenu(content, 0, menu) %>
-                    </li>
-                </ul>
+                <li>
+                  <ul>
+                      <li class="collapse show" id="docs">
+                          <%= printMenu(content, 0, menu) %>
+                      </li>
+                  </ul>
+                <li>
         </nav>

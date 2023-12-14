@@ -10,7 +10,7 @@
     new File(config.sourceFolder,"groovy/menu.groovy").text
   )
 %>
-<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+<nav aria-label="main navigation" class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
   <a class="navbar-brand" href="${content.rootpath}index.html">
       <span class="navbar-logo"></span><span
           class="font-weight-bold">${config.site_title}</span>

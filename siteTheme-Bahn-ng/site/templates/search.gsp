@@ -31,7 +31,7 @@
 
                 <div class="td-content">
                     <p>
-                        <h3>Search Results</h3>
+                        <h1>Search Results</h1>
                 <script src="${content.rootpath}js/lunr.js"></script>
                 <script src="${content.rootpath}lunrjsindex.js"></script>
                 <script src="${content.rootpath}js/lunrsearch.js"></script>

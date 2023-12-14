@@ -4,19 +4,31 @@
       <%
         def sideMenu = content.menu[content['jbake-menu']]
         def topMenu = content.entriesMap[content['jbake-menu']]
-        if (topMenu) { topMenu = topMenu[0]} else { topMenu = "" }
+        if (topMenu) {
+            topMenuUri = topMenu[1][0].uri
+            topMenu = topMenu[0]
+        } else {
+            topMenu = ""
+            topMenuUri = "#"
+        }
         def crawl
         def breadcrumbs = [:]
         crawl = { map, parent ->
           map.each { entry ->
+            def title = config.site_menu[entry.title]?:entry.title
             if (entry.children) {
-              crawl(entry.children, parent +"<li aria-current='page' class='breadcrumb-item'>${entry.title}</li>")
+              def uri = entry.children[0]?.uri
+              crawl(entry.children, parent +"<li aria-current='page' class='breadcrumb-item'><a href='${content.rootpath}${uri}'>${title}</a></li>")
             } else {
-              breadcrumbs[entry.uri] = parent +"<li aria-current='page' class='breadcrumb-item'><a href='${content.rootpath}${entry.uri}'>${entry.title}</a></li>"
+              breadcrumbs[entry.uri] = parent +"<li aria-current='page' class='breadcrumb-item'><a href='${content.rootpath}${entry.uri}'>${title}</a></li>"
             }
           }
         }
-        crawl(sideMenu, "<li aria-current='page' class='breadcrumb-item'>${topMenu}</li>")
+        if (topMenuUri=="#") {
+            crawl(sideMenu, "<li aria-current='page' class='breadcrumb-item'>${topMenu}</li>")
+        } else {
+            crawl(sideMenu, "<li aria-current='page' class='breadcrumb-item'><a href='${content.rootpath}${topMenuUri}'>${topMenu}</a></li>")
+        }
         if (content.uri) {
           out << breadcrumbs[content.uri]
         }
@@ -32,6 +44,8 @@
     if (splitBody.contains("<!-- endtoc -->")) {
       splitBody = splitBody.split("(?ms)<!-- endtoc -->", 2)[1]
     }
+    def title = content.title ?: config.site_title
+    splitBody = "<h1 class='sr-only'>${title}</h1>" + splitBody
     out << splitBody
 
   %>
