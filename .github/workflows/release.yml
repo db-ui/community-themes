@@ -8,7 +8,7 @@ on:
 
 jobs:
   zip_themes:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04 # Use Ubuntu 24.04 explicitly
     strategy:
       matrix:
         # List of theme directories that shall be included
@@ -27,7 +27,7 @@ jobs:
           retention-days: 1
 
   make_release:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04 # Use Ubuntu 24.04 explicitly
     needs: zip_themes
     steps:
       - name: Download artifacts
