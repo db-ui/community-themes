@@ -9,8 +9,8 @@
 @font-face {
   font-family: 'DB Screen Head';
   src: local('DB Screen Head Regular'),
-    url('../fonts/dbscreenhead-regular.woff2') format('woff2'),
-    url('../fonts/dbscreenhead-regular.woff') format('woff');
+    url('https://db-ui.github.io/core/fonts/dbscreenhead-regular.woff2') format('woff2'),
+    url('https://db-ui.github.io/core/fonts/dbscreenhead-regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
@@ -18,8 +18,8 @@
 @font-face {
   font-family: 'DB Screen Head';
   src: local('DB Screen Head Black'),
-    url('../fonts/dbscreenhead-black.woff2') format('woff2'),
-    url('../fonts/dbscreenhead-black.woff') format('woff');
+    url('https://db-ui.github.io/core/fonts/dbscreenhead-black.woff2') format('woff2'),
+    url('https://db-ui.github.io/core/fonts/dbscreenhead-black.woff') format('woff');
   font-weight: 700;
   font-style: normal;
 }
@@ -27,8 +27,8 @@
 @font-face {
   font-family: 'DB Screen Head';
   src: local('DB Screen Head Black'),
-    url('../fonts/dbscreenhead-black.woff2') format('woff2'),
-    url('../fonts/dbscreenhead-black.woff') format('woff');
+    url('https://db-ui.github.io/core/fonts/dbscreenhead-black.woff2') format('woff2'),
+    url('https://db-ui.github.io/core/fonts/dbscreenhead-black.woff') format('woff');
   font-weight: 900;
   font-style: normal;
 }
