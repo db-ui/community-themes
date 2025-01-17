@@ -774,7 +774,7 @@ table th {
   font-family: "DB Screen Sans";
   font-style: normal;
   font-weight: 700;
-  src: local("DB Screen Sans Bold"), url("../fonts/dbscreensans-bold.woff2?4r0073") format("woff2");
+  src: local("DB Screen Sans Bold"), url("../fonts/DBNonLatin-Bold-EU.woff2?4r0073") format("woff2");
 }
 :root {
   --font-family-sans-serif: DB Screen Sans, Helvetica, Arial, sans-serif;
