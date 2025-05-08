@@ -741,19 +741,19 @@ table th {
 
 @font-face {
   font-family: "DB Screen Head";
-  src: local("DB Screen Head Light"), url("../fonts/dbscreenhead-light.woff2?4r0073") format("woff2"), url("../fonts/dbscreenhead-light.woff?4r0073") format("woff");
+  src: local("DB Screen Head Light"), url("https://db-ui.github.io/core/fonts/dbscreenhead-light.woff2?4r0073") format("woff2"), url("https://db-ui.github.io/core/fonts/dbscreenhead-light.woff?4r0073") format("woff");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "DB Screen Sans";
-  src: local("DB Screen Sans Regular"), url("../fonts/dbscreensans-regular.woff2?4r0073") format("woff2"), url("../fonts/dbscreensans-regular.woff?4r0073") format("woff");
+  src: local("DB Screen Sans Regular"), url("https://db-ui.github.io/core/fonts/dbscreensans-regular.woff2?4r0073") format("woff2"), url("https://db-ui.github.io/core/fonts/dbscreensans-regular.woff?4r0073") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "DB Screen Sans";
-  src: local("DB Screen Sans Bold"), url("../fonts/dbscreensans-bold.woff2?4r0073") format("woff2"), url("../fonts/dbscreensans-bold.woff?4r0073") format("woff");
+  src: local("DB Screen Sans Bold"), url("https://db-ui.github.io/core/fonts/dbscreensans-bold.woff2?4r0073") format("woff2"), url("https://db-ui.github.io/core/fonts/dbscreensans-bold.woff?4r0073") format("woff");
   font-weight: 700;
   font-style: normal;
 }
@@ -762,19 +762,19 @@ table th {
   font-weight: 400;
   font-style: normal;
   font-weight: 300;
-  src: local("DB Screen Head Light"), url("../fonts/dbscreenhead-light.woff2?4r0073") format("woff2"), url("../fonts/dbscreenhead-light.woff?4r0073") format("woff");
+  src: local("DB Screen Head Light"), url("https://db-ui.github.io/core/fonts/dbscreenhead-light.woff2?4r0073") format("woff2"), url("https://db-ui.github.io/core/fonts/dbscreenhead-light.woff?4r0073") format("woff");
 }
 @font-face {
   font-family: "DB Screen Sans";
   font-style: normal;
   font-weight: 400;
-  src: local("DB Screen Sans Regular"), url("../fonts/dbscreensans-regular.woff2?4r0073") format("woff2"), url("../fonts/dbscreensans-regular.woff?4r0073") format("woff");
+  src: local("DB Screen Sans Regular"), url("https://db-ui.github.io/core/fonts/dbscreensans-regular.woff2?4r0073") format("woff2"), url("https://db-ui.github.io/core/fonts/dbscreensans-regular.woff?4r0073") format("woff");
 }
 @font-face {
   font-family: "DB Screen Sans";
   font-style: normal;
   font-weight: 700;
-  src: local("DB Screen Sans Bold"), url("../fonts/dbscreensans-bold.woff2?4r0073") format("woff2"), url("../fonts/dbscreensans-bold.woff?4r0073") format("woff");
+  src: local("DB Screen Sans Bold"), url("../fonts/DBNonLatin-Bold-EU.woff2?4r0073") format("woff2");
 }
 :root {
   --font-family-sans-serif: DB Screen Sans, Helvetica, Arial, sans-serif;
