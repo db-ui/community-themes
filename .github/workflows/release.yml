@@ -15,7 +15,7 @@ jobs:
         directory: [siteTheme-Bahn-ng]
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Zip the theme directory
         run: |
           cd ${{ matrix.directory }} && zip -r ../${{ matrix.directory }}-${{ github.ref_name }}.zip .
